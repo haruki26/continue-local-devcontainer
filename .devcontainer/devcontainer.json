@@ -1,0 +1,29 @@
+{
+  "name": "sf-dev",
+  "dockerComposeFile": ["./docker-compose.yml"],
+  "service": "sf-dev",
+  "workspaceFolder": "/app",
+  "remoteUser": "node",
+  "mounts": [
+    {
+      "type": "volume",
+      "target": "${containerWorkspaceFolder}/node_modules"
+    }
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "editor.renderWhitespace": "all"
+      },
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "continue.continue"
+      ]
+    }
+  },
+  "postAttachCommand": "sudo chown -R node:node /app /app/node_modules && npm i",
+  "forwardPorts": [5173]
+}

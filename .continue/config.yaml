@@ -1,0 +1,42 @@
+name: Local Assistant
+version: 1.0.0
+schema: v1
+
+models:
+  - name: Qwen 7b (Chat / Agent)
+    provider: ollama
+    model: qwen2.5-coder:7b-instruct-q4_K_M
+    apiBase: http://ollama:11434
+    roles:
+      - chat
+    capabilities: [tool_use]
+    keep_alive: "5m"
+    defaultCompletionOptions:
+      contextLength: 16384
+
+  - name: Qwen2.5 Coder 1.5B (Autocomplete)
+    provider: ollama
+    model: qwen2.5-coder:1.5b
+    roles:
+      - autocomplete
+    keep_alive: "5m"
+
+  - name: Nomic Embed Text (Embed)
+    provider: ollama
+    model: nomic-embed-text
+    roles:
+      - embed
+    keep_alive: "5m"
+
+context:
+  - provider: code
+  - provider: docs
+  - provider: diff
+  - provider: terminal
+  - provider: problems
+  - provider: folder
+  - provider: codebase
+    params:
+      useReranking: false
+      nRetrieve: 25
+      nFinal: 10
