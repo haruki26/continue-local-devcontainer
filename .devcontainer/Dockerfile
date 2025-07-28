@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install -y \
     sudo \
     curl \
     git \
+    jq \
     make \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
