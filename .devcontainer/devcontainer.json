@@ -24,6 +24,7 @@
       ]
     }
   },
+  "postStartCommand": "mkdir -p ~/.continue && ln -s ${containerWorkspaceFolder}/.continue/config.yaml ~/.continue/",
   "postAttachCommand": "sudo chown -R node:node /app /app/node_modules && npm i",
   "forwardPorts": [5173]
 }
