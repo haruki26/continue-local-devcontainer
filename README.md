@@ -17,6 +17,10 @@ Continue.dev のローカル開発環境を Dev Container で構築するプロ�
 - Visual Studio Code
 - Dev Containers 拡張機能
 
+- [WSL2 のインストール](./docs/setup/wsl_install.md)
+- [Docker のインストール](./docs/setup/docker_install.md)
+- [GPU を使用する](./docs/setup/use_gpu.md) (NVIDIA GPU 搭載マシン向け)
+
 ## 🛠️ セットアップ
 
 ### 1. リポジトリのクローン
@@ -81,9 +85,6 @@ npm run build
 
 # ESLintによるコード検証
 npm run lint
-
-# プレビューサーバー起動
-npm run preview
 ```
 
 ### セットアップコマンド
@@ -91,6 +92,8 @@ npm run preview
 ```bash
 # Ollamaモデルの一括ダウンロード
 make setup
+
+# 個別モデルの追加（例: gpt-oss:20b）
 ```
 
 ## 🤖 Continue.dev の使用方法
