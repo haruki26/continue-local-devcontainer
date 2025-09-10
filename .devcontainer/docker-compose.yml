@@ -23,6 +23,15 @@ services:
     environment:
       - OLLAMA_HOST="0.0.0.0"
     command: ["serve"]
+    # Use gpu if available
+    # Uncomment the following lines to enable GPU support
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
 
 volumes:
   ollama_models:
