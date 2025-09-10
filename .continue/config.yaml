@@ -14,6 +14,17 @@ models:
     defaultCompletionOptions:
       contextLength: 16384
 
+  - name: gpt oss
+    provider: ollama
+    model: gpt-oss:20b
+    apiBase: http://ollama:11434
+    roles:
+      - chat
+    capabilities: [tool_use]
+    keep_alive: "5m"
+    defaultCompletionOptions:
+      contextLength: 16384
+
   - name: Qwen2.5 Coder 1.5B (Autocomplete)
     provider: ollama
     model: qwen2.5-coder:1.5b
