@@ -3,13 +3,8 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
-// Added a new component named Counter.js
-const Counter = () => {
+export default function App() {
   const [count, setCount] = useState(0);
-
-  const incrementByTwo = () => {
-    setCount(count + 2);
-  };
 
   return (
     <>
@@ -23,7 +18,9 @@ const Counter = () => {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={incrementByTwo}>count is {count}</button>
+        <button onClick={() => setCount((prev) => prev + 1)}>
+          count is {count}
+        </button>
         <p>
           Edit <code>src/components/Counter.js</code> and save to test HMR
         </p>
@@ -33,11 +30,4 @@ const Counter = () => {
       </p>
     </>
   );
-};
-
-// Updated App.tsx with Counter component
-function App() {
-  return <Counter />;
 }
-
-export default App;

@@ -35,13 +35,15 @@ models:
 context:
   - provider: code
   - provider: file
-  - provider: docs
   - provider: diff
   - provider: terminal
-  - provider: problems
-  - provider: folder
   - provider: codebase
     params:
       useReranking: false
       nRetrieve: 25
       nFinal: 10
+
+mcpServers:
+  - name: Context7 MCP
+    type: streamable-http
+    url: https://mcp.context7.com/mcp
